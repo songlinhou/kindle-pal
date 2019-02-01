@@ -48,11 +48,11 @@ def send_attachment_mail(sender_qq, pwd, receiver, title, content, filelist,conf
         else:
             print 'Time used:{} secs'.format(time_end - time_start)
 
-    except smtp.SMTPException,e:
+    except Exception,e:
         if config_lang == 'cn':
-            print bcolors.FAIL + '发生错误，错误内容为:'+str(e) + bcolors.ENDC
+            print bcolors.FAIL + '发生错误，错误内容为:'+ bcolors.ENDC,e
         else:
-            print bcolors.FAIL + 'Error found:'+str(e) + bcolors.ENDC
+            print bcolors.FAIL + 'Error found:'+ bcolors.ENDC, e 
     finally:
         smtp.quit()
         

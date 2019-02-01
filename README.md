@@ -61,7 +61,7 @@ pip clone https://github.com/songlinhou/kindle-pal.git
 
 cd kindle-pal
 
-python start.py
+python kindle_push.py
 
 ```
 注意：由于Windows并不自带Python环境。因此需要首先按照Python运行环境。

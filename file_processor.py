@@ -34,6 +34,12 @@ def split_word(word):
         else:
             en_str += ch
     return cn_str,en_str
+
+def filter_filename(name):
+    filters = ['\'','"','.']
+    for f in filters:
+        name = name.replace(f,'_')
+    return name
     
 
 def change_chosen_file_name(chosen_map,config_lang):
@@ -50,7 +56,9 @@ def change_chosen_file_name(chosen_map,config_lang):
                     print bcolors.BOLD + 'Non-english characters which are not supported found in file names. A English translation of file names will start.' + bcolors.ENDC
                 flag = False
             basename,ext = os.path.splitext(name)
-            new_name = baidu_translator.get_english(basename) + ext
+            base = baidu_translator.get_english(basename)
+            base = filter_filename(base)
+            new_name = base + ext
             name_change[name] = new_name
             if config_lang == 'cn':
                 print '重命名:\033[93m{}\033[0m -> \033[1m{}\033[0m'.format(name,new_name)

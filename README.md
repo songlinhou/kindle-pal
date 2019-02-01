@@ -6,7 +6,9 @@
 * 可执行文件：目前只有 Mac OS
 
 现有功能：
+
 （1）一键式将文件夹中所有Kindle支持的文件进行推送。
+
 （2）根据高可读配置文件自动语言切换。（中文和英文）
 
 -------
@@ -14,6 +16,18 @@
 ### 快速启动：
 
 Mac OS (推荐二进制文件)
+
+*环境依赖*
+
+```
+#如果你没有安装homebrew，运行以下命令
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" # if you have no homebrew installed
+
+#安装wget
+brew install wget
+```
+
+*安装启动*
 
 ```
 mkdir KindleUtils

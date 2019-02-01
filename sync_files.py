@@ -42,6 +42,11 @@ def send_attachment_mail(sender_qq, pwd, receiver, title, content, filelist,conf
         time_start = time.time()
         smtp.sendmail(sender_qq_email, receiver, msg.as_string())
         time_end = time.time()
+        
+        if config_lang == 'cn':
+            print '操作耗时{}秒'.format(time_end-time_start)
+        else:
+            print 'Time used:{} secs'.format(time_end - time_start)
 
     except smtp.SMTPException,e:
         if config_lang == 'cn':
@@ -50,10 +55,7 @@ def send_attachment_mail(sender_qq, pwd, receiver, title, content, filelist,conf
             print bcolors.FAIL + 'Error found:'+str(e) + bcolors.ENDC
     finally:
         smtp.quit()
-        if config_lang == 'cn':
-            print '操作耗时{}秒'.format(time_end-time_start)
-        else:
-            print 'Time used:{} secs'.format(time_end - time_start)
+        
 
 
 

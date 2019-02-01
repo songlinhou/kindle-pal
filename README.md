@@ -17,8 +17,10 @@
 请通过浏览器登录您的QQ邮箱，然后进入账户设置。
 ![](images/stmp_qq.png)
 
-在最下面找到POP3/IMAP等服务，打开前面3个服务。
-![](images/stmp.png)
+在最下面找到POP3/IMAP等服务，打开POP3/SMTP服务。
+![](/Users/MacBook/Documents/KindleSync/images/stmp_open.png)
+
+点击**生成授权码**，将该授权码作为QQ邮箱的密码填入后面会使用到的配置文件中。
 
 **权限设置非常重要。没有设置之前无法推送。**
 
@@ -110,7 +112,14 @@ Kindle Email Address=123123@kindle.cn
 You can use this program right after configuration.
 ```
 对于中文用户，请在 **（1）中文配置**中输入必要的推送信息。
-For English users, please fill the fields in **Section (2)**
+
+由于QQ邮箱功能限制，对于新启用POP3/SMTP服务的用户（参照开启权限进行了相关操作），请将**QQ邮件的登录密码**部分的密码换为**授权码**，否则会导致发送失败。
+
+如果您早期启动用POP3/SMTP服务，可以尝试使用QQ邮箱登录密码（不推荐）。
+
+For English users, please fill the fields in **Section (2)**. Please use the **authorization code** obtained in your account settings of your qq mail instead of your qq mail **login password** if you just turned on POP3/STMP lately. 
+
+If you have enabled POP3/STMP before, you can try using your login password.(Not Recommended.)
 
 （2）再次运行程序
 
